@@ -1,0 +1,314 @@
+.pomodoro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 40px;
+}
+
+.pomodoro-title {
+  background-color: hsla(198, 100%, 50%, 0.6);
+  padding: 8px 24px;
+  border-radius: 12px;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.top-actions {
+  position: absolute;
+  right: 39%;
+  bottom: -75%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bg-btn,
+.settings-btn {
+  background-color: hsl(21, 100%, 50%);
+  border: none;
+  font-size: 1.4rem;
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: transform 0.2s ease;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-btn:hover,
+.settings-btn:hover {
+  transform: scale(1.06);
+}
+
+
+/* Modal Overlay & Card */
+.settings-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.settings-modal {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 24px 30px;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 280px;
+  max-width: 90vw;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.settings-heading {
+  margin: 0 0 6px 0;
+  font-size: 1.25rem;
+  color: #f1f5f9;
+  text-align: center;
+}
+
+.setting-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-size: 15px;
+}
+
+.setting-field input {
+  width: 65px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #475569;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.setting-field input:focus {
+  outline: 2px solid hsl(21, 100%, 50%);
+}
+
+.close-btn {
+  margin-top: 8px;
+  padding: 10px;
+  background-color: hsl(21, 100%, 50%);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.close-btn:hover {
+  opacity: 0.9;
+}
+
+.mode-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.mode-btn {
+  padding: 10px 16px;
+  min-width: 110px;
+  border: none;
+  border-radius: 20px;
+  background-color: hsl(21, 100%, 50%);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.mode-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.timer-display {
+  font-size: clamp(3.8rem, 12vw, 8rem);
+  background-color: hsla(209, 99%, 51%, 0.8);
+  margin: 15px 0;
+  padding: 15px 35px;
+  border-radius: 24px;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.control-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.control-btn {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 100px;
+}
+
+.control-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.btn-start {
+  background-color: hsl(21, 100%, 50%);
+  color: #ffffff;
+}
+
+.btn-reset {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+  .pomodoro {
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .pomodoro-title {
+    font-size: 2rem;
+    padding: 6px 18px;
+  }
+
+  .mode-group {
+    gap: 12px;
+  }
+
+  .mode-btn {
+    font-size: 15px;
+    padding: 9px 14px;
+    min-width: 100px;
+  }
+
+  .timer-display {
+    padding: 12px 28px;
+    border-radius: 20px;
+  }
+
+  .control-btn {
+    padding: 10px 24px;
+    font-size: 15px;
+  }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .pomodoro {
+    gap: 14px;
+    padding: 12px;
+  }
+
+  .top-bar {
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .top-actions {
+    position: static;
+    gap: 6px;
+  }
+
+  .bg-btn,
+  .settings-btn {
+    font-size: 1.2rem;
+    padding: 6px 10px;
+  }
+
+  .pomodoro-title {
+    font-size: 1.5rem;
+    padding: 6px 14px;
+    letter-spacing: 1px;
+  }
+
+  .mode-group {
+    gap: 8px;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .mode-btn {
+    flex: 1 1 calc(33.333% - 8px);
+    min-width: 85px;
+    font-size: 13px;
+    padding: 8px 6px;
+    border-radius: 14px;
+  }
+
+  .timer-display {
+    font-size: clamp(3rem, 18vw, 4.5rem);
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 16px;
+  }
+
+  .control-group {
+    gap: 12px;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .control-btn {
+    flex: 1;
+    padding: 10px 16px;
+    font-size: 14px;
+    min-width: unset;
+  }
+}
