@@ -95,7 +95,7 @@ pomodoro/
 
 ## 👤 Author
 
-- **Hieu Nguyen** - [GitHub Profile](https://github.com/hieunguyen601)
+- **Henry Nguyen** - [GitHub Profile](https://github.com/hieunguyen601)
 
 ---
 
