@@ -2,7 +2,7 @@
 
 A modern, responsive, and aesthetic **Pomodoro Timer web application** built with **React** and **Vite**. Designed to boost productivity, minimize distractions, and provide a cozy, customized study/work environment with multiple scenic backgrounds.
 
-🌐 **Live Demo:** [https://hieunguyen601.github.io/Pomodoro-Project/](https://hieunguyen601.github.io/Pomodoro-Project/)
+🌐 **Live Demo:** [https://hieunguyen601.github.io/pomodoro-project/](https://hieunguyen601.github.io/pomodoro-project/)
 
 ---
 
@@ -40,8 +40,8 @@ Ensure you have [Node.js](https://nodejs.org/) installed (v18 or higher recommen
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/hieunguyen601/Pomodoro-Project.git
-   cd Pomodoro-Project
+   git clone https://github.com/hieunguyen601/pomodoro-project.git
+   cd pomodoro-project
    ```
 
 2. **Install dependencies:**
